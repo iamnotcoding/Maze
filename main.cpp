@@ -4,6 +4,7 @@
 #include "maze.hpp"
 
 #define DATA_FILE_NAME "maze.txt"
+
 using namespace std;
 
 int main()
