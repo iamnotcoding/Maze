@@ -3,7 +3,7 @@
 
 ### maze.txt file format
 
-first line = N, M
+first line = N, M <br />
 following lines = map
 
 Start = 2
