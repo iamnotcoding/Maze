@@ -10,17 +10,32 @@ using namespace std;
 int main()
 {
 	FILE *input;
-        Maze maze;
-        
-        input = fopen(DATA_FILE_NAME, "r");
+	Maze maze;
+	unsigned length;
+	vector<TwoD> shortestPath;
 
-        if (input == NULL)
-        {
-                perror("Cannot open file " DATA_FILE_NAME " ");
-                return 1;
-        }
+	input = fopen(DATA_FILE_NAME, "r");
 
-        maze.GetMapInput(5, input);
-        
-        maze.PrintMap();
+	if (input == NULL)
+	{
+		perror("Cannot open file " DATA_FILE_NAME " ");
+
+		return 1;
+	}
+
+	maze.GetMapInput(input);
+
+	maze.PrintMap();
+
+	putchar('\n');
+
+	length = maze.GetShortestPathLength();
+
+	cout << "path length : " << length << endl;
+
+	shortestPath = maze.GetShortestPath();
+
+	maze.MarkShortestPath(shortestPath);
+	
+	maze.PrintMap();
 }
