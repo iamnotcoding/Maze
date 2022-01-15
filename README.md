@@ -3,7 +3,7 @@
 
 ### maze.txt file format
 
-first line = N, M <br />
+first line = y size, x size <br />
 following lines = map
 
 Start = 2
